@@ -23,7 +23,7 @@ window.addEventListener("load", () => {
 window.addEventListener("click", function () {
   if (music == false){
     music = true
-    var scary = new Audio("/Off to Osaka.mp3");
+    var scary = new Audio("/Off to Osaka (1).mp3");
     scary.addEventListener("canplaythrough", function () {
       scary.loop = true;
       document.getElementById("sfx").appendChild(scary)
