@@ -197,7 +197,7 @@ function jporkupgrade() {
     clicktxt.innerHTML = Math.floor(clicks) + " people"
     perSec = perSec + 1000
     document.getElementById("per-sec").innerHTML = Math.floor(perSec) + " PPS"
-    var jpork = new Audio("https://cdn.glitch.global/c41c8670-3cf7-46c1-af6f-80bca9485eed/johnPorkIsCalling.mp3?v=1681167288818")
+    var jpork = new Audio("/johnPorkIsCalling.mp3")
     var scaryMusic = document.getElementById('scawyMusic')
     if (scaryMusic) {
       scaryMusic.stop()
