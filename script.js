@@ -51,7 +51,7 @@ function clickupgrade() {
     clickUpgrades += 1;
     document.getElementById("click-upgrade-times").innerHTML = clickUpgrades;
     var buysfx = new Audio(
-      "https://cdn.glitch.global/c41c8670-3cf7-46c1-af6f-80bca9485eed/buy.mp3?v=1680780725155"
+      "/buy.mp3"
     );
     buysfx.addEventListener("canplaythrough", (event) => {
       buysfx.play();
@@ -82,7 +82,7 @@ function crowdupgrade() {
     }
     crowdUpgrades += 1;
     document.getElementById("crowd-upgrade-times").innerHTML = crowdUpgrades;
-    var buysfx = new Audio("https://cdn.glitch.global/c41c8670-3cf7-46c1-af6f-80bca9485eed/buy.mp3?v=1680780725155");
+    var buysfx = new Audio("/buy");
     buysfx.addEventListener("canplaythrough", (event) => {
       buysfx.play();
     });
@@ -113,7 +113,7 @@ function maxwellupgrade() {
     maxwellUpgrades += 1;
     document.getElementById("maxwell-upgrade-times").innerHTML = maxwellUpgrades;
     var buysfx = new Audio(
-      "https://cdn.glitch.global/c41c8670-3cf7-46c1-af6f-80bca9485eed/buy.mp3?v=1680780725155"
+      "/buy.mp3"
     );
     buysfx.addEventListener("canplaythrough", (event) => {
       buysfx.play();
@@ -157,7 +157,7 @@ function carupgrade() {
     }
     carUpgrades += 1;
     document.getElementById("car-upgrade-times").innerHTML = carUpgrades;
-    var buysfx = new Audio("https://cdn.glitch.global/c41c8670-3cf7-46c1-af6f-80bca9485eed/buy.mp3?v=1680780725155");
+    var buysfx = new Audio("/buy.mp3");
     buysfx.addEventListener("canplaythrough", (event) => {
       buysfx.play();
     });
@@ -187,7 +187,7 @@ function jporkupgrade() {
     }
     jporkUpgrades += 1;
     document.getElementById("jpork-upgrade-times").innerHTML = jporkUpgrades;
-    var buysfx = new Audio("https://cdn.glitch.global/c41c8670-3cf7-46c1-af6f-80bca9485eed/buy.mp3?v=1680780725155");
+    var buysfx = new Audio("/buy.mp3");
     buysfx.addEventListener("canplaythrough", (event) => {
       buysfx.play();
     });
