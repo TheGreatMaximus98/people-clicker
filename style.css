@@ -1,0 +1,109 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Anuphan&display=swap');
+* {
+  overflow: hidden;
+  cursor: auto;
+  user-select: none;
+}
+#game {
+  position: relative;
+  float: left;
+  text-align: center;
+}
+#click-img {
+  cursor: pointer;
+  width: 20rem;
+  height: 20rem;
+}
+@keyframes click {
+  0% {
+    transform: scale(1.0);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+  
+  100% {
+    transform: scale(1.0);
+  }
+}
+#click {
+  display: flex;
+  justify-content: center;
+}
+#maxwell-hat {
+  display: none;
+  padding-top: 37px;
+  width: 100px;
+  position: absolute;
+  z-index: 99999;
+}
+#maxwell-hat-active {
+  padding-top: 2rem;
+  width: 100px;
+  position: absolute;
+  z-index: 99999;
+}
+#click-text {
+  font-size: 50px;
+}
+#per-sec {
+  font-size: 54px;
+}
+#ppc {
+  font-size: 35px;
+}
+h1, h2, h3, h4, h5, h6, p, span, button, small {
+  font-family: 'Anuphan', sans-serif;
+}
+#cursor-img {
+  width: 16px;
+  height: auto;
+}
+#crowd-img {
+  width: 21px;
+  height: auto;
+}
+#alert-img {
+  width: 21px;
+  height: auto;
+}
+#maxwell-img {
+  width: 21px;
+  height: auto;
+}
+#jpork-img {
+  width: 21px;
+  height: auto;
+}
+#upgrades {
+  height: 32.5%;
+  float: right;
+  overflow-y: auto;
+  width: 14rem;
+}
+#divider {
+  height: 2rem;
+}
+#click-upgrade {
+  cursor: pointer;
+}
+#overlay {
+  position: fixed;
+  display: none;
+  z-index: 99999999999999999999999999999999999999999999;
+  height: 100%;
+  color: white;
+  width: 100%;
+  background-color: grey;
+}
+#overlay-active {
+  position: fixed;
+  display: block;
+  z-index: 99999999999999999999999999999999999999999999;
+  height: 100%;
+  color: white;
+  width: 100%;
+  background-color: grey;
+}
