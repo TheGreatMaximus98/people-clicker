@@ -44,7 +44,7 @@ window.addEventListener("load", () => {
     document.getElementById("crowd-upgrade-cost").innerHTML = crowdUpgradeCost;
   }
   if (getCookie("maxwellU")){
-    maxwellUpgrades = parseInt(getCookie("maxwellUCost"))
+    maxwellUpgrades = parseInt(getCookie("maxwellU"))
     document.getElementById("maxwell-upgrade-times").innerHTML = maxwellUpgrades;
   }
   if (getCookie("maxwellUCost")){
