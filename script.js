@@ -16,10 +16,61 @@ var carUpgradeCost = 10000;
 var jporkUpgrades = 0;
 var jporkUpgradeCost = 100000;
 window.addEventListener("load", () => {
-  if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("service-worker.js");
+  if (getCookie("clicks")){
+    clicks = parseInt(getCookie("clicks"))
+  }
+  if (getCookie("ppc")){
+    ppc = parseInt(getCookie("ppc"))
+  }
+  if (getCookie("perS")){
+    perSec = parseInt(getCookie("perS"))
+  }
+  if (getCookie("clickU")){
+    clickUpgrades = parseInt(getCookie("clickU"))
+  }
+  if (getCookie("clickUCost")){
+    clickUpgradeCost = parseInt(getCookie("clickUCost"))
+  }
+  if (getCookie("crowdU")){
+    crowdUpgrades = parseInt(getCookie("crowdU"))
+  }
+  if (getCookie("crowdUCost")){
+    crowdUpgradeCost = parseInt(getCookie("crowdUCost"))
+  }
+  if (getCookie("maxwellU")){
+    maxwellUpgrades = parseInt(getCookie("maxwellUCost"))
+  }
+  if (getCookie("maxwellUCost")){
+    maxwellUpgradeCost = parseInt(getCookie("maxwellUCost"))
+  }
+  if (getCookie("carU")){
+    carUpgrades = parseInt(getCookie("carU"))
+  }
+  if (getCookie("carUCost")){
+    carUpgradeCost = parseInt(getCookie("carUCost"))
+  }
+  if (getCookie("jporkU")){
+    jporkUpgrades = parseInt(getCookie("jporkU"))
+  }
+  if (getCookie("jporkUCost")){
+    jporkUpgradeCost = parseInt(getCookie("jporkUCost"))
   }
 });
+function save(){
+  document.cookie = "clicks="+clicks+";"
+  document.cookie = "ppc="+ppc+";"
+  document.cookie = "perS="+perS+";"
+  document.cookie = "clickU="+clickUpgrades+";"
+  document.cookie = "clickUCost="+clickUpgradeCost+";"
+  document.cookie = "crowdU="+crowdUpgrades+";"
+  document.cookie = "crowdUCost="+crowdUpgradeCost+";"
+  document.cookie = "maxwellU="+maxwellUpgrades+";"
+  document.cookie = "maxwellUCost="+maxwellUpgradeCOst+";"
+  document.cookie = "carU="+carUpgrades+";"
+  document.cookie = "carUCost="+carUpgradeCost+";"
+  document.cookie = "jporkU="+jporkUpgrade+";"
+  document.cookie = "jporkUCost="+jporkUpgradeCost+";"
+}
 window.addEventListener("click", function () {
   if (music == false){
     music = true
