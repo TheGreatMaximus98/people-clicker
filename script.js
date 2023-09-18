@@ -21,39 +21,51 @@ window.addEventListener("load", () => {
   }
   if (getCookie("ppc")){
     ppc = parseInt(getCookie("ppc"))
+    document.getElementById("ppc").innerHTML = ppc + " PPC";
   }
   if (getCookie("perS")){
     perSec = parseInt(getCookie("perS"))
+    document.getElementById("per-sec").innerHTML = perSec + " PPS";
   }
   if (getCookie("clickU")){
     clickUpgrades = parseInt(getCookie("clickU"))
+    document.getElementById("click-upgrade-times").innerHTML = clickUpgrades;
   }
   if (getCookie("clickUCost")){
     clickUpgradeCost = parseInt(getCookie("clickUCost"))
+    document.getElementById("click-upgrade-cost").innerHTML = clickUpgradeCost;
   }
   if (getCookie("crowdU")){
     crowdUpgrades = parseInt(getCookie("crowdU"))
+    document.getElementById("crowd-upgrade-times").innerHTML = crowdUpgrades;
   }
   if (getCookie("crowdUCost")){
     crowdUpgradeCost = parseInt(getCookie("crowdUCost"))
+    document.getElementById("crowd-upgrade-cost").innerHTML = crowdUpgradeCost;
   }
   if (getCookie("maxwellU")){
     maxwellUpgrades = parseInt(getCookie("maxwellUCost"))
+    document.getElementById("maxwell-upgrade-times").innerHTML = maxwellUpgrades;
   }
   if (getCookie("maxwellUCost")){
     maxwellUpgradeCost = parseInt(getCookie("maxwellUCost"))
+    document.getElementById("maxwell-upgrade-cost").innerHTML = maxwellUpgradeCost;
   }
   if (getCookie("carU")){
     carUpgrades = parseInt(getCookie("carU"))
+    document.getElementById("car-upgrade-times").innerHTML = carUpgrades;
   }
   if (getCookie("carUCost")){
     carUpgradeCost = parseInt(getCookie("carUCost"))
+    document.getElementById("car-upgrade-cost").innerHTML = carUpgradeCost;
   }
   if (getCookie("jporkU")){
     jporkUpgrades = parseInt(getCookie("jporkU"))
+    document.getElementById("jpork-upgrade-times").innerHTML = jporkUpgrades;
   }
   if (getCookie("jporkUCost")){
     jporkUpgradeCost = parseInt(getCookie("jporkUCost"))
+    document.getElementById("car-upgrade-cost").innerHTML = jporkUpgradeCost;
   }
 });
 function save(){
