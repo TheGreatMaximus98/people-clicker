@@ -59,7 +59,7 @@ window.addEventListener("load", () => {
 function save(){
   document.cookie = "clicks="+clicks+";"
   document.cookie = "ppc="+ppc+";"
-  document.cookie = "perS="+perS+";"
+  document.cookie = "perS="+perSec+";"
   document.cookie = "clickU="+clickUpgrades+";"
   document.cookie = "clickUCost="+clickUpgradeCost+";"
   document.cookie = "crowdU="+crowdUpgrades+";"
