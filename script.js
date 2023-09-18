@@ -65,7 +65,7 @@ function save(){
   document.cookie = "crowdU="+crowdUpgrades+";"
   document.cookie = "crowdUCost="+crowdUpgradeCost+";"
   document.cookie = "maxwellU="+maxwellUpgrades+";"
-  document.cookie = "maxwellUCost="+maxwellUpgradeCOst+";"
+  document.cookie = "maxwellUCost="+maxwellUpgradeCost+";"
   document.cookie = "carU="+carUpgrades+";"
   document.cookie = "carUCost="+carUpgradeCost+";"
   document.cookie = "jporkU="+jporkUpgrade+";"
