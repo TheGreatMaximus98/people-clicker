@@ -22,7 +22,7 @@ document.addEventListener("keydown", (e) => {
     e.preventDefault()
     if (mIndex == 0){
       mIndex = 1
-      document.querySelector("#scawyMusic").src = "/Im Still Standing.mp3"
+      document.querySelector("#scawyMusic").src = "/New Friendly.mp3"
     } else {
       mIndex = 0
       document.querySelector("#scawyMusic").src = "/Off to Osaka.mp3"
