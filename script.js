@@ -99,7 +99,7 @@ function save(){
   document.cookie = "maxwellUCost="+maxwellUpgradeCost+";"
   document.cookie = "carU="+carUpgrades+";"
   document.cookie = "carUCost="+carUpgradeCost+";"
-  document.cookie = "jporkU="+jporkUpgrade+";"
+  document.cookie = "jporkU="+jporkUpgrades+";"
   document.cookie = "jporkUCost="+jporkUpgradeCost+";"
 }
 window.addEventListener("click", function () {
