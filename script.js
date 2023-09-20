@@ -1,4 +1,4 @@
-var click = document.getElementById("click");
+ var click = document.getElementById("click");
 var clicktxt = document.getElementById("click-text");
 var clicks = 0;
 var clickAnimation = false;
@@ -30,6 +30,9 @@ document.addEventListener("keydown", (e) => {
   }
 })
 window.addEventListener("load", () => {
+  if (getCookie("cheater")){
+    window.location.href = "/cheater"
+  }
   if (getCookie("rebirths")){
     rebirths = parseInt(getCookie("rebirths"))
   }
