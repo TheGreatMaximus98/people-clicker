@@ -107,6 +107,7 @@ function resave(){
   document.cookie = "carUCost="+carUpgradeCost+";"
   document.cookie = "jporkU="+jporkUpgrades+";"
   document.cookie = "jporkUCost="+jporkUpgradeCost+";"
+  window.location.reload()
 }
 function save(){
   document.cookie = "rebirths="+rebirths+"; "
