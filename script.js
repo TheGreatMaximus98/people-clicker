@@ -17,16 +17,14 @@ var carUpgradeCost = 10000;
 var jporkUpgrades = 0;
 var jporkUpgradeCost = 100000;
 window.keyup = function(e){
-  if (e.key == "ControlLeft"){
+  if (e.key == "KeyM"){
     e.preventDefault()
-    if (e.key == "KeyM"){
-      if (mIndex == 0){
-        mIndex = 1
-        document.querySelector("#scawyMusic").src = "/Im Still Standing.mp3"
-      } else {
-        mIndex = 0
-        document.querySelector("#scawyMusic").src = "/Off to Osaka.mp3"
-      }
+    if (mIndex == 0){
+      mIndex = 1
+      document.querySelector("#scawyMusic").src = "/Im Still Standing.mp3"
+    } else {
+      mIndex = 0
+      document.querySelector("#scawyMusic").src = "/Off to Osaka.mp3"
     }
   }
 }
