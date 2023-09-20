@@ -17,7 +17,7 @@ var carUpgrades = 0;
 var carUpgradeCost = 10000;
 var jporkUpgrades = 0;
 var jporkUpgradeCost = 100000;
-window.keyup = function(e){
+document.addEventListener("keydown", (e) => {
   if (e.key == "m"){
     e.preventDefault()
     if (mIndex == 0){
@@ -28,7 +28,7 @@ window.keyup = function(e){
       document.querySelector("#scawyMusic").src = "/Off to Osaka.mp3"
     }
   }
-}
+})
 window.addEventListener("load", () => {
   if (getCookie("rebirths")){
     rebirths = parseInt(getCookie("rebirths"))
