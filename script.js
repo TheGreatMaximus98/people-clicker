@@ -348,7 +348,7 @@ function add() {
   if (clickAnimation == true) {
     document.getElementById("click-img").style.animation = "";
   }
-  clicks += ppc * rebirths;
+  clicks += ppc * (rebirths+1);
   clicktxt.innerHTML = Math.floor(clicks) + " people";
   clickAnimation = true;
   document.getElementById("click-img").style.animation = "click 0.2s";
