@@ -4,7 +4,8 @@ var clicks = 0;
 var clickAnimation = false;
 var perSec = 0;
 var music = false;
-var ppc = 1
+var ppc = 1;
+var rebirths = 0;
 var clickUpgrades = 0;
 var clickUpgradeCost = 10;
 var crowdUpgrades = 0;
@@ -16,6 +17,9 @@ var carUpgradeCost = 10000;
 var jporkUpgrades = 0;
 var jporkUpgradeCost = 100000;
 window.addEventListener("load", () => {
+  if (getCookie("rebirths")){
+    rebirths = parseInt(getCookie("rebirths"))
+  }
   if (getCookie("clicks")){
     clicks = parseInt(getCookie("clicks"))
   }
@@ -69,6 +73,7 @@ window.addEventListener("load", () => {
   }
 });
 function save(){
+  document.cookie = "rebirths="+rebirths+"; "
   document.cookie = "clicks="+clicks+";"
   document.cookie = "ppc="+ppc+";"
   document.cookie = "perS="+perSec+";"
@@ -95,6 +100,7 @@ window.addEventListener("click", function () {
     });
   }
 });
+window.addEventListener("onbeforeunload", save());
 function getCookie(cname) {
   let name = cname + "=";
   let ca = document.cookie.split(";");
