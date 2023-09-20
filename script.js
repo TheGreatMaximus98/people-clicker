@@ -85,6 +85,29 @@ window.addEventListener("load", () => {
     document.getElementById("car-upgrade-cost").innerHTML = jporkUpgradeCost;
   }
 });
+function resave(){
+  var clickUpgrades = 0;
+  var clickUpgradeCost = 10;
+  var crowdUpgrades = 0;
+  var crowdUpgradeCost = 100;
+  var maxwellUpgrades = 0;
+  var maxwellUpgradeCost = 1000;
+  var carUpgrades = 0;
+  var carUpgradeCost = 10000;
+  var jporkUpgrades = 0;
+  var jporkUpgradeCost = 100000;
+  document.cookie = "rebirths="+rebirths+";"
+  document.cookie = "clickU="+clickUpgrades+";"
+  document.cookie = "clickUCost="+clickUpgradeCost+";"
+  document.cookie = "crowdU="+crowdUpgrades+";"
+  document.cookie = "crowdUCost="+crowdUpgradeCost+";"
+  document.cookie = "maxwellU="+maxwellUpgrades+";"
+  document.cookie = "maxwellUCost="+maxwellUpgradeCost+";"
+  document.cookie = "carU="+carUpgrades+";"
+  document.cookie = "carUCost="+carUpgradeCost+";"
+  document.cookie = "jporkU="+jporkUpgrades+";"
+  document.cookie = "jporkUCost="+jporkUpgradeCost+";"
+}
 function save(){
   document.cookie = "rebirths="+rebirths+"; "
   document.cookie = "clicks="+clicks+";"
@@ -279,18 +302,30 @@ function jporkupgrade() {
     clicktxt.innerHTML = Math.floor(clicks) + " people"
     perSec = perSec + 1000
     document.getElementById("per-sec").innerHTML = Math.floor(perSec) + " PPS"
-    var jpork = new Audio("/johnPorkIsCalling.mp3")
-    var scaryMusic = document.getElementById('scawyMusic')
-    if (scaryMusic) {
-      scaryMusic.stop()
+  } else {
+    const toastBootstrap = bootstrap.Toast.getOrCreateInstance(
+      document.getElementById("cantAfford")
+    );
+    if (clickUpgradeCost - clicks == 1) {
+      document.getElementById("alert-end").innerHTML = "more person.";
+    } else {
+      document.getElementById("alert-end").innerHTML = "more people.";
     }
-    jpork.play();
-    document.getElementById("overlay").id = "overlay-active"
-    document.getElementById("sfx").appendChild(jpork)
-    setTimeout(function(){
-      scaryMusic.play()
-      jpork.remove()
-    }, 8000)
+    document.getElementById("alert-cost").innerHTML = jporkUpgradeCost - clicks;
+    toastBootstrap.show();
+  }
+}
+function rebirthupgrade() {
+  if (clicks > 1000000 - 1) {
+    rebirths += 1;
+    var buysfx = new Audio("/buy.mp3");
+    buysfx.addEventListener("canplaythrough", (event) => {
+      buysfx.play();
+    });
+    clicks = clicks - 1000000;
+    clicktxt.innerHTML = Math.floor(clicks) + " people"
+    resave();
+    window.location.reload();
   } else {
     const toastBootstrap = bootstrap.Toast.getOrCreateInstance(
       document.getElementById("cantAfford")
@@ -338,6 +373,9 @@ $("#car-upgrade").click(function () {
 });
 $("#jpork-upgrade").click(function () {
   jporkupgrade();
+});
+$("#rebirth-upgrade").click(function () {
+  rebirthupgrade();
 });
 window.addEventListener("keyup", (e) => {
   e.preventDefault();
