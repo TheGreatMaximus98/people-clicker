@@ -18,7 +18,7 @@ var carUpgradeCost = 10000;
 var jporkUpgrades = 0;
 var jporkUpgradeCost = 100000;
 window.keyup = function(e){
-  if (e.key == "KeyM"){
+  if (e.key == "m"){
     e.preventDefault()
     if (mIndex == 0){
       mIndex = 1
