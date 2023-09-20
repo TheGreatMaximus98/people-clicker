@@ -4,6 +4,7 @@ var clicks = 0;
 var clickAnimation = false;
 var perSec = 0;
 var music = false;
+var mIndex = 0;
 var ppc = 1;
 var rebirths = 0;
 var clickUpgrades = 0;
