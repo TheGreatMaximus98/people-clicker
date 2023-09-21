@@ -10,7 +10,7 @@
     measurementId: "G-8JPC0Q2H6B"
   };
   
-  const app = initializeApp(firebaseConfig);
+  const app = firebase.initializeApp(firebaseConfig);
   function loginWithGoogle(){
     var provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithPopup(provider);
