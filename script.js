@@ -1,4 +1,6 @@
- var click = document.getElementById("click");
+// lebin was here
+
+var click = document.getElementById("click");
 var clicktxt = document.getElementById("click-text");
 var clicks = 0;
 var clickAnimation = false;
