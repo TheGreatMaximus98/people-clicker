@@ -83,14 +83,6 @@ window.addEventListener("load", () => {
     carUpgradeCost = parseInt(getCookie("carUCost"))
     document.getElementById("car-upgrade-cost").innerHTML = carUpgradeCost;
   }
-  if (getCookie("jporkU")){
-    jporkUpgrades = parseInt(getCookie("jporkU"))
-    document.getElementById("jpork-upgrade-times").innerHTML = jporkUpgrades;
-  }
-  if (getCookie("jporkUCost")){
-    jporkUpgradeCost = parseInt(getCookie("jporkUCost"))
-    document.getElementById("jpork-upgrade-cost").innerHTML = jporkUpgradeCost;
-  }
   if (getCookie("busU")){
     jporkUpgrades = parseInt(getCookie("jporkU"))
     document.getElementById("bus-upgrade-times").innerHTML = busUpgrades;
@@ -109,8 +101,6 @@ function resave(){
   var maxwellUpgradeCost = 1000;
   var carUpgrades = 0;
   var carUpgradeCost = 10000;
-  var jporkUpgrades = 0;
-  var jporkUpgradeCost = 100000;
   document.cookie = "rebirths="+rebirths+";"
   document.cookie = "clickU="+clickUpgrades+";"
   document.cookie = "clickUCost="+clickUpgradeCost+";"
@@ -120,8 +110,6 @@ function resave(){
   document.cookie = "maxwellUCost="+maxwellUpgradeCost+";"
   document.cookie = "carU="+carUpgrades+";"
   document.cookie = "carUCost="+carUpgradeCost+";"
-  document.cookie = "jporkU="+jporkUpgrades+";"
-  document.cookie = "jporkUCost="+jporkUpgradeCost+";"
   document.cookie = "busU="+busUpgrades+";"
   document.cookie = "busUCost="+busUpgradeCost+";"
   window.location.reload()
@@ -139,8 +127,8 @@ function save(){
   document.cookie = "maxwellUCost="+maxwellUpgradeCost+";"
   document.cookie = "carU="+carUpgrades+";"
   document.cookie = "carUCost="+carUpgradeCost+";"
-  document.cookie = "jporkU="+jporkUpgrades+";"
-  document.cookie = "jporkUCost="+jporkUpgradeCost+";"
+  document.cookie = "busU="+busUpgrades+";"
+  document.cookie = "busUCost="+busUpgradeCost+";"
 }
 window.addEventListener("click", function () {
   if (music == false){
@@ -303,36 +291,6 @@ function carupgrade() {
     toastBootstrap.show();
   }
 }
-function jporkupgrade() {
-  if (clicks > jporkUpgradeCost - 1) {
-    if (jporkUpgrades == 4){
-      document.getElementById('jpork-upgrade').disabled = true
-    }
-    jporkUpgrades += 1;
-    document.getElementById("jpork-upgrade-times").innerHTML = jporkUpgrades;
-    var buysfx = new Audio("/buy.mp3");
-    buysfx.addEventListener("canplaythrough", (event) => {
-      buysfx.play();
-    });
-    clicks = clicks - jporkUpgradeCost;
-    jporkUpgradeCost = Math.floor(jporkUpgradeCost * 1.5)
-    document.getElementById("jpork-upgrade-cost").innerHTML = jporkUpgradeCost
-    clicktxt.innerHTML = Math.floor(clicks) + " people"
-    perSec = perSec + 1000
-    document.getElementById("per-sec").innerHTML = Math.floor(perSec) + " PPS"
-  } else {
-    const toastBootstrap = bootstrap.Toast.getOrCreateInstance(
-      document.getElementById("cantAfford")
-    );
-    if (clickUpgradeCost - clicks == 1) {
-      document.getElementById("alert-end").innerHTML = "more person.";
-    } else {
-      document.getElementById("alert-end").innerHTML = "more people.";
-    }
-    document.getElementById("alert-cost").innerHTML = jporkUpgradeCost - clicks;
-    toastBootstrap.show();
-  }
-}
 function busupgrade() {
   if (clicks > busUpgradeCost - 1) {
     rebirths += 1;
@@ -388,9 +346,6 @@ $("#maxwell-cat-upgrade").click(function () {
 });
 $("#car-upgrade").click(function () {
   carupgrade();
-});
-$("#jpork-upgrade").click(function () {
-  jporkupgrade();
 });
 $("#bus-upgrade").click(function () {
   busupgrade();
