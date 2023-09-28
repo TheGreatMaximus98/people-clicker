@@ -19,6 +19,8 @@ var carUpgrades = 0;
 var carUpgradeCost = 10000;
 var jporkUpgrades = 0;
 var jporkUpgradeCost = 100000;
+var busUpgrades = 0;
+var busUpgradeCost = 100000;
 document.addEventListener("keydown", (e) => {
   if (e.key == "m"){
     e.preventDefault()
@@ -87,7 +89,15 @@ window.addEventListener("load", () => {
   }
   if (getCookie("jporkUCost")){
     jporkUpgradeCost = parseInt(getCookie("jporkUCost"))
-    document.getElementById("car-upgrade-cost").innerHTML = jporkUpgradeCost;
+    document.getElementById("jpork-upgrade-cost").innerHTML = jporkUpgradeCost;
+  }
+  if (getCookie("busU")){
+    jporkUpgrades = parseInt(getCookie("jporkU"))
+    document.getElementById("bus-upgrade-times").innerHTML = busUpgrades;
+  }
+  if (getCookie("busUCost")){
+    busUpgradeCost = parseInt(getCookie("busUCost"))
+    document.getElementById("bus-upgrade-cost").innerHTML = busUpgradeCost;
   }
 });
 function resave(){
@@ -112,6 +122,8 @@ function resave(){
   document.cookie = "carUCost="+carUpgradeCost+";"
   document.cookie = "jporkU="+jporkUpgrades+";"
   document.cookie = "jporkUCost="+jporkUpgradeCost+";"
+  document.cookie = "busU="+busUpgrades+";"
+  document.cookie = "busUCost="+busUpgradeCost+";"
   window.location.reload()
 }
 function save(){
@@ -321,8 +333,8 @@ function jporkupgrade() {
     toastBootstrap.show();
   }
 }
-function rebirthupgrade() {
-  if (clicks > 1000000 - 1) {
+function busupgrade() {
+  if (clicks > busUpgradeCost - 1) {
     rebirths += 1;
     var buysfx = new Audio("//cdn.crazycontent.net/buy.mp3");
     buysfx.addEventListener("canplaythrough", (event) => {
@@ -336,12 +348,12 @@ function rebirthupgrade() {
     const toastBootstrap = bootstrap.Toast.getOrCreateInstance(
       document.getElementById("cantAfford")
     );
-    if (clickUpgradeCost - clicks == 1) {
+    if (busUpgradeCost - clicks == 1) {
       document.getElementById("alert-end").innerHTML = "more person.";
     } else {
       document.getElementById("alert-end").innerHTML = "more people.";
     }
-    document.getElementById("alert-cost").innerHTML = jporkUpgradeCost - clicks;
+    document.getElementById("alert-cost").innerHTML = busUpgradeCost - clicks;
     toastBootstrap.show();
   }
 }
@@ -380,8 +392,8 @@ $("#car-upgrade").click(function () {
 $("#jpork-upgrade").click(function () {
   jporkupgrade();
 });
-$("#rebirth-upgrade").click(function () {
-  rebirthupgrade();
+$("#bus-upgrade").click(function () {
+  busupgrade();
 });
 window.addEventListener("keyup", (e) => {
   e.preventDefault();
