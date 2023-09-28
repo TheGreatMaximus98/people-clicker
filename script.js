@@ -1,5 +1,4 @@
-// lebin was here
-// maximus was here
+// Creator: Maximus Halloran
 
 var click = document.getElementById("click");
 var clicktxt = document.getElementById("click-text");
@@ -25,10 +24,10 @@ document.addEventListener("keydown", (e) => {
     e.preventDefault()
     if (mIndex == 0){
       mIndex = 1
-      document.querySelector("#scawyMusic").src = "/New Friendly.mp3"
+      document.querySelector("#scawyMusic").src = "//cdn.crazycontent.net/New Friendly.mp3"
     } else {
       mIndex = 0
-      document.querySelector("#scawyMusic").src = "/Off to Osaka.mp3"
+      document.querySelector("#scawyMusic").src = "//cdn.crazycontent.net/Off to Osaka.mp3"
     }
   }
 })
@@ -134,7 +133,7 @@ function save(){
 window.addEventListener("click", function () {
   if (music == false){
     music = true
-    var scary = new Audio("/Off to Osaka.mp3");
+    var scary = new Audio("//cdn.crazycontent.net/Off to Osaka.mp3");
     scary.addEventListener("canplaythrough", function () {
       scary.loop = true;
       document.getElementById("sfx").appendChild(scary)
@@ -325,7 +324,7 @@ function jporkupgrade() {
 function rebirthupgrade() {
   if (clicks > 1000000 - 1) {
     rebirths += 1;
-    var buysfx = new Audio("/buy.mp3");
+    var buysfx = new Audio("//cdn.crazycontent.net/buy.mp3");
     buysfx.addEventListener("canplaythrough", (event) => {
       buysfx.play();
     });
