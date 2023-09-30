@@ -21,6 +21,8 @@ var jporkUpgrades = 0;
 var jporkUpgradeCost = 100000;
 var busUpgrades = 0;
 var busUpgradeCost = 100000;
+var hotelUpgrades = 0;
+var hotelUpgradeCost = 1000000;
 document.addEventListener("keydown", (e) => {
   if (e.key == "m"){
     e.preventDefault()
@@ -293,12 +295,12 @@ function carupgrade() {
 }
 function busupgrade() {
   if (clicks > busUpgradeCost - 1) {
-    rebirths += 1;
+    ppc += 500;
     var buysfx = new Audio("//cdn.crazycontent.net/buy.mp3");
     buysfx.addEventListener("canplaythrough", (event) => {
       buysfx.play();
     });
-    clicks = clicks - 1000000;
+    clicks = clicks - busUpgradeCost;
     clicktxt.innerHTML = Math.floor(clicks) + " people"
     window.location.reload();
   } else {
@@ -311,6 +313,29 @@ function busupgrade() {
       document.getElementById("alert-end").innerHTML = "more people.";
     }
     document.getElementById("alert-cost").innerHTML = busUpgradeCost - clicks;
+    toastBootstrap.show();
+  }
+}
+function hotelupgrade() {
+  ppc += 1000;
+  if (clicks > busUpgradeCost - 1) {
+    var buysfx = new Audio("//cdn.crazycontent.net/buy.mp3");
+    buysfx.addEventListener("canplaythrough", (event) => {
+      buysfx.play();
+    });
+    clicks = clicks - hotelUpgradeCost;
+    clicktxt.innerHTML = Math.floor(clicks) + " people"
+    window.location.reload();
+  } else {
+    const toastBootstrap = bootstrap.Toast.getOrCreateInstance(
+      document.getElementById("cantAfford")
+    );
+    if (busUpgradeCost - clicks == 1) {
+      document.getElementById("alert-end").innerHTML = "more person.";
+    } else {
+      document.getElementById("alert-end").innerHTML = "more people.";
+    }
+    document.getElementById("alert-cost").innerHTML = hotelUpgradeCost - clicks;
     toastBootstrap.show();
   }
 }
@@ -348,6 +373,9 @@ $("#car-upgrade").click(function () {
 });
 $("#bus-upgrade").click(function () {
   busupgrade();
+});
+$("#hotel-upgrade").click(function () {
+  hotelupgrade();
 });
 window.addEventListener("keyup", (e) => {
   e.preventDefault();
