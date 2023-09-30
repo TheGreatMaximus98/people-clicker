@@ -86,36 +86,22 @@ window.addEventListener("load", () => {
     document.getElementById("car-upgrade-cost").innerHTML = carUpgradeCost;
   }
   if (getCookie("busU")){
-    jporkUpgrades = parseInt(getCookie("jporkU"))
+    busUpgrades = parseInt(getCookie("busU"))
     document.getElementById("bus-upgrade-times").innerHTML = busUpgrades;
   }
   if (getCookie("busUCost")){
     busUpgradeCost = parseInt(getCookie("busUCost"))
     document.getElementById("bus-upgrade-cost").innerHTML = busUpgradeCost;
   }
+  if (getCookie("hotelU")){
+    hotelUpgrades = parseInt(getCookie("hotelU"))
+    document.getElementById("hotel-upgrade-times").innerHTML = hotelUpgrades;
+  }
+  if (getCookie("hotelUCost")){
+    hotelUpgradeCost = parseInt(getCookie("hotelUCost"))
+    document.getElementById("hotel-upgrade-cost").innerHTML = hotelUpgradeCost;
+  }
 });
-function resave(){
-  var clickUpgrades = 0;
-  var clickUpgradeCost = 10;
-  var crowdUpgrades = 0;
-  var crowdUpgradeCost = 100;
-  var maxwellUpgrades = 0;
-  var maxwellUpgradeCost = 1000;
-  var carUpgrades = 0;
-  var carUpgradeCost = 10000;
-  document.cookie = "rebirths="+rebirths+";"
-  document.cookie = "clickU="+clickUpgrades+";"
-  document.cookie = "clickUCost="+clickUpgradeCost+";"
-  document.cookie = "crowdU="+crowdUpgrades+";"
-  document.cookie = "crowdUCost="+crowdUpgradeCost+";"
-  document.cookie = "maxwellU="+maxwellUpgrades+";"
-  document.cookie = "maxwellUCost="+maxwellUpgradeCost+";"
-  document.cookie = "carU="+carUpgrades+";"
-  document.cookie = "carUCost="+carUpgradeCost+";"
-  document.cookie = "busU="+busUpgrades+";"
-  document.cookie = "busUCost="+busUpgradeCost+";"
-  window.location.reload()
-}
 function save(){
   document.cookie = "rebirths="+rebirths+"; "
   document.cookie = "clicks="+clicks+";"
@@ -131,6 +117,8 @@ function save(){
   document.cookie = "carUCost="+carUpgradeCost+";"
   document.cookie = "busU="+busUpgrades+";"
   document.cookie = "busUCost="+busUpgradeCost+";"
+  document.cookie = "hotelU="+hotelUpgrades+";"
+  document.cookie = "hotelUCost="+hotelUpgradeCost+";"
 }
 window.addEventListener("click", function () {
   if (music == false){
