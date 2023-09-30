@@ -300,7 +300,6 @@ function busupgrade() {
     });
     clicks = clicks - 1000000;
     clicktxt.innerHTML = Math.floor(clicks) + " people"
-    resave();
     window.location.reload();
   } else {
     const toastBootstrap = bootstrap.Toast.getOrCreateInstance(
