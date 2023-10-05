@@ -36,7 +36,7 @@ document.addEventListener("keydown", (e) => {
     }
   }
 })
-window.addEventListener("load", () => {
+function load(){
   if (getCookie("cheater")){
     window.location.href = "/cheater"
   }
@@ -102,7 +102,7 @@ window.addEventListener("load", () => {
     hotelUpgradeCost = parseInt(getCookie("hotelUCost"))
     document.getElementById("hotel-upgrade-cost").innerHTML = hotelUpgradeCost;
   }
-});
+}
 function save(){
   document.cookie = "rebirths="+rebirths+"; "
   document.cookie = "clicks="+clicks+";"
