@@ -370,3 +370,4 @@ window.addEventListener("keyup", (e) => {
     add();
   }
 });
+load()
