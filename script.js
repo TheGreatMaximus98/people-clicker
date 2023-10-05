@@ -1,4 +1,5 @@
 // Creator: Maximus Halloran
+// newgrounds lol
 
 var click = document.getElementById("click");
 var clicktxt = document.getElementById("click-text");
