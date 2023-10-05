@@ -291,7 +291,6 @@ function busupgrade() {
     });
     clicks = clicks - busUpgradeCost;
     clicktxt.innerHTML = Math.floor(clicks) + " people"
-    window.location.reload();
   } else {
     const toastBootstrap = bootstrap.Toast.getOrCreateInstance(
       document.getElementById("cantAfford")
@@ -314,7 +313,6 @@ function hotelupgrade() {
     });
     clicks = clicks - hotelUpgradeCost;
     clicktxt.innerHTML = Math.floor(clicks) + " people"
-    window.location.reload();
   } else {
     const toastBootstrap = bootstrap.Toast.getOrCreateInstance(
       document.getElementById("cantAfford")
