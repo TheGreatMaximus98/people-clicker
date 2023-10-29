@@ -1,5 +1,5 @@
 // Creator: Maximus Halloran
-// newgrounds lol
+// READ THIS FOR LICENSE INFO: https://people-clicker.crazycontent.net/LICENSE.md
 
 var click = document.getElementById("click");
 var clicktxt = document.getElementById("click-text");
@@ -39,6 +39,13 @@ document.addEventListener("keydown", (e) => {
 function load(){
   if (getCookie("cheater")){
     window.location.href = "/cheater"
+  }
+  if (getCookie("key")){
+    fetch("https://app.cryptolens.io/api/key/GetKey?token=WyI2NTMyMTAzMyIsIjVLL0RySytIdFBKRjZBOERQSGsySHZSMEdUZmxXNFRYNU9PL25YUE4iXQ==&ProductId=22459&Key="+getCookie("key")).then(res => res.json()).then(out => {
+      if (out["result"] == 0){
+        document.location.href = "/license.html"
+      }
+    })
   }
   if (getCookie("rebirths")){
     rebirths = parseInt(getCookie("rebirths"))
@@ -103,6 +110,7 @@ function load(){
     document.getElementById("hotel-upgrade-cost").innerHTML = hotelUpgradeCost;
   }
 }
+window.onload = load()
 function save(){
   document.cookie = "rebirths="+rebirths+"; "
   document.cookie = "clicks="+clicks+";"
