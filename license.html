@@ -1,0 +1,31 @@
+<input type="text" class="product-key"></input>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+  var url = "https://app.cryptolens.io/api/key/GetKey?token=WyI2NTMyMTAzMyIsIjVLL0RySytIdFBKRjZBOERQSGsySHZSMEdUZmxXNFRYNU9PL25YUE4iXQ==&ProductId=22459&Key="
+      function format(str, k=5) {
+        str = str.trim() .replace(/[^a-zA-Z0-9]/g, "").toUpperCase().split("");
+        let len = str.length;
+        for (let i = len; i > 0; i = i - k) {
+            if (i != len) {
+                str[i - 1] = str[i - 1] + "-";
+            }
+        }
+        return str.join(""); 
+  }
+  function next(){
+    let formattedVal = format(document.querySelector(".product-key").value)
+    if (formattedVal.length != 23){
+      alert("Product Key is not formatted correctly.")
+    } else {
+      fetch(url+formattedVal).then(res => res.json()).then(out => {
+        if (out["result"] == 0){
+          document.cookie = "productKey="+formattedVal+";"
+          document.location.href = "https://people-clicker.crazycontent.net/"
+        } else {
+          alert("Unknown Product Key")
+        }
+      })
+    }
+  }
+</script>
+<button onclick="next()">Submit</button>
