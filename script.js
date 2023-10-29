@@ -377,4 +377,3 @@ window.addEventListener("keyup", (e) => {
   }
 });
 setTimeout(load, 100)
-load()
