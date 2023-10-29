@@ -52,26 +52,29 @@
   }
 
   input {
-    padding 12px 20px
-    font-size 1rem
-    border-width calc(var(--border-width) * 1px)
-    border-style solid
-    border-color var(--accent)
-    border-radius calc(var(--border-radius) * 1px)
-    text-align center
-    outline transparent
-    width 100%
-    transition border-color calc(var(--transition, 0.2) * 1s) ease
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-width: calc(var(--border-width) * 1px);
+    border-style: solid;
+    border-color: var(--accent);
+    border-radius: calc(var(--border-radius) * 1px);
+    text-align: center;
+    outline: transparent;
+    width: 100%;
+    transition: border-color calc(var(--transition, 0.2) * 1s) ease;
   }
 
-  input:valid
-    --accent hsla(100, 100%, 50%, 1)
+  input:valid {
+    --accent: hsla(100, 100%, 50%, 1)
+  }
 
-  input:invalid
-    --accent hsla(10, 100%, 50%, 0.5)
+  input:invalid {
+    --accent: hsla(10, 100%, 50%, 0.5)
+  }
 
-  input:placeholder-shown
-    --accent hsl(0, 0%, 100%)
+  input:placeholder-shown {
+    --accent: hsl(0, 0%, 100%)
+  }
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script>
