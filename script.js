@@ -1,5 +1,5 @@
 // Creator: Maximus Halloran
-// READ THIS FOR LICENSE INFO: https://people-clicker.crazycontent.net/LICENSE.md
+// Music Taken Down for Copyright reasons.
 
 var click = document.getElementById("click");
 var clicktxt = document.getElementById("click-text");
