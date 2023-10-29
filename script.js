@@ -109,7 +109,6 @@ function load(){
       }
     })
 }
-window.onload = load()
 function save(){
   document.cookie = "rebirths="+rebirths+"; "
   document.cookie = "clicks="+clicks+";"
@@ -377,4 +376,5 @@ window.addEventListener("keyup", (e) => {
     add();
   }
 });
+setTimeout(load, 100)
 load()
