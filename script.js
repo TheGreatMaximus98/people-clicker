@@ -40,13 +40,6 @@ function load(){
   if (getCookie("cheater")){
     window.location.href = "/cheater"
   }
-  if (getCookie("key")){
-    fetch("https://app.cryptolens.io/api/key/GetKey?token=WyI2NTMyMTAzMyIsIjVLL0RySytIdFBKRjZBOERQSGsySHZSMEdUZmxXNFRYNU9PL25YUE4iXQ==&ProductId=22459&Key="+getCookie("key")).then(res => res.json()).then(out => {
-      if (out["result"] == 1){
-        document.location.href = "/licensekey.html"
-      }
-    })
-  }
   if (getCookie("rebirths")){
     rebirths = parseInt(getCookie("rebirths"))
   }
@@ -109,6 +102,12 @@ function load(){
     hotelUpgradeCost = parseInt(getCookie("hotelUCost"))
     document.getElementById("hotel-upgrade-cost").innerHTML = hotelUpgradeCost;
   }
+  fetch("https://app.cryptolens.io/api/key/GetKey?token=WyI2NTMyMTAzMyIsIjVLL0RySytIdFBKRjZBOERQSGsySHZSMEdUZmxXNFRYNU9PL25YUE4iXQ==&ProductId=22459&Key="+getCookie("key")).then(res => res.json()).then(out => {
+      if (out["result"] == 1){
+        document.body.innerHTML = "LICENSE KEY INVALID"
+        document.location.href = "/licensekey.html"
+      }
+    })
 }
 window.onload = load()
 function save(){
