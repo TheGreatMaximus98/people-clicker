@@ -18,24 +18,10 @@ var maxwellUpgrades = 0;
 var maxwellUpgradeCost = 1000;
 var carUpgrades = 0;
 var carUpgradeCost = 10000;
-var jporkUpgrades = 0;
-var jporkUpgradeCost = 100000;
 var busUpgrades = 0;
 var busUpgradeCost = 100000;
 var hotelUpgrades = 0;
 var hotelUpgradeCost = 1000000;
-document.addEventListener("keydown", (e) => {
-  if (e.key == "m"){
-    e.preventDefault()
-    if (mIndex == 0){
-      mIndex = 1
-      document.querySelector("#scawyMusic").src = "//cdn.crazycontent.net/New Friendly.mp3"
-    } else {
-      mIndex = 0
-      document.querySelector("#scawyMusic").src = "//cdn.crazycontent.net/Off to Osaka.mp3"
-    }
-  }
-})
 function load(){
   if (getCookie("cheater")){
     window.location.href = "/cheater"
@@ -127,18 +113,6 @@ function save(){
   document.cookie = "hotelU="+hotelUpgrades+";"
   document.cookie = "hotelUCost="+hotelUpgradeCost+";"
 }
-window.addEventListener("click", function () {
-  if (music == false){
-    music = true
-    var scary = new Audio("//cdn.crazycontent.net/Off to Osaka.mp3");
-    scary.addEventListener("canplaythrough", function () {
-      scary.loop = true;
-      document.getElementById("sfx").appendChild(scary)
-      scary.id = "scawyMusic"
-      scary.play();
-    });
-  }
-});
 window.addEventListener("onbeforeunload", save());
 function getCookie(cname) {
   let name = cname + "=";
