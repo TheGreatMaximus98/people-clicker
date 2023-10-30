@@ -231,7 +231,7 @@ $("#crowd-upgrade").click(function () {
 $("#maxwell-cat-upgrade").click(function () {
   maxwellupgrade();
   alert("Demo Finished Redirecting to Product Key!")
-  window.location.href = "/licensekey.html"
+  window.location.href = "/productkey.html"
 });
 window.addEventListener("keyup", (e) => {
   e.preventDefault();
