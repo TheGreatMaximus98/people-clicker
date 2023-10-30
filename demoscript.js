@@ -83,18 +83,6 @@ function save(){
   document.cookie = "maxwellU="+maxwellUpgrades+";"
   document.cookie = "maxwellUCost="+maxwellUpgradeCost+";"
 }
-window.addEventListener("click", function () {
-  if (music == false){
-    music = true
-    var scary = new Audio("//cdn.crazycontent.net/Off to Osaka.mp3");
-    scary.addEventListener("canplaythrough", function () {
-      scary.loop = true;
-      document.getElementById("sfx").appendChild(scary)
-      scary.id = "scawyMusic"
-      scary.play();
-    });
-  }
-});
 window.addEventListener("onbeforeunload", save());
 function getCookie(cname) {
   let name = cname + "=";
@@ -242,6 +230,8 @@ $("#crowd-upgrade").click(function () {
 });
 $("#maxwell-cat-upgrade").click(function () {
   maxwellupgrade();
+  alert("Demo Finished Redirecting to Product Key!")
+  window.location.href = "/licensekey.html"
 });
 window.addEventListener("keyup", (e) => {
   e.preventDefault();
