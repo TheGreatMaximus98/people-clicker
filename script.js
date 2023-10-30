@@ -90,8 +90,8 @@ function load(){
   }
   fetch("https://app.cryptolens.io/api/key/GetKey?token=WyI2NTMyMTAzMyIsIjVLL0RySytIdFBKRjZBOERQSGsySHZSMEdUZmxXNFRYNU9PL25YUE4iXQ==&ProductId=22459&Key="+getCookie("key")).then(res => res.json()).then(out => {
       if (out["result"] == 1){
-        document.body.innerHTML = "LICENSE KEY INVALID"
-        document.location.href = "/licensekey.html"
+        document.body.innerHTML = "PRODUCT KEY INVALID REDIRECTING"
+        document.location.href = "/productkey.html"
       }
     })
 }
