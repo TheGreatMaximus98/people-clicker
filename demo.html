@@ -1,0 +1,76 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/image_2023-09-15_075452186.png" />
+
+    <title>People Clicker</title>
+
+    <!-- import the webpage's stylesheets -->
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" />
+    <!-- import the webpage's javascript files -->
+    <script src="/script.js" defer></script>
+    <script id="secure" defer>
+      setInterval(function(){
+        if (!document.querySelector("#secure2")){
+          window.location.href = "/cheater"
+          document.cookie = "cheater=1;"
+        }
+      }, 10)
+    </script>
+    <script id="secure2" defer>
+      setInterval(function(){
+        if (!document.querySelector("#secure")){
+          window.location.href = "/cheater"
+          document.cookie = "cheater=1;"
+        }
+      }, 10)
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/32f24d6ad6.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <img id="save" src="/image_2023-09-18_152308881.png" onclick="save()">
+    <img id="load" src="/7037283.png" onclick="load()">
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+      <div id="maxwell" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+          <img id="alert-img" src="/image_2023-09-15_075452186.png" class="rounded me-2 small">
+          <strong class="me-auto">People Clicker</strong>
+          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">OMG YOU GOT MAXWELL CAT?!?!?!?!?!</div>
+      </div>
+    </div>
+    <div id="game">
+      <span id="click-text">0 people</span>
+      <br>
+      <span id="per-sec">0 PPS</span>
+      <br>
+      <span id="ppc">0 PPC</span>
+      <div id="click">
+        <img src="https://media.tenor.com/qJRMLPlR3_8AAAAi/maxwell-cat.gif" id="maxwell-hat">
+        <img src="/image_2023-09-15_075452186.png" id="click-img">
+      </div>
+      <div id="sfx"></div>    </div>
+    <div id="upgrades">
+      <button id="click-upgrade" class="btn btn-secondary">[ <span id="click-upgrade-times">0</span> ] Cursor <img id="cursor-img" src="/image_2023-09-19_212108598.png"> [<span id="click-upgrade-cost">10</span>] [+1 per click]</button>
+      <div id="divider"></div>
+      <button id="crowd-upgrade" class="btn btn-secondary">[ <span id="crowd-upgrade-times">0</span> ] Crowd <img id="crowd-img" src="/image_2023-09-19_212506147.png"> [<span id="crowd-upgrade-cost">100</span>] [+10 per second]</button>
+      <div id="divider"></div>
+      <button id="maxwell-cat-upgrade" class="btn btn-secondary">[ <span id="maxwell-upgrade-times">0</span> ] Maxwell Cat <img id="maxwell-img" src="https://media.tenor.com/qJRMLPlR3_8AAAAi/maxwell-cat.gif"> [<span id="maxwell-upgrade-cost">1000</span>] [+10 per click]</button>
+    </div>
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+      <div id="cantAfford" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+          <img id="alert-img" src="/image_2023-09-15_075452186.png" class="rounded me-2 small">
+          <strong class="me-auto">People Clicker</strong>
+          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">You need <span id="alert-cost">0</span> <span id="alert-end">more dollars.</span></div>
+      </div>
+    </div>
+  </body>
+</html>
