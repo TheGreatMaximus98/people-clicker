@@ -30,59 +30,10 @@ document.addEventListener("keydown", (e) => {
   }
 })
 function load(){
-  if (getCookie("cheater")){
-    window.location.href = "/cheater"
-  }
-  if (getCookie("rebirths")){
-    rebirths = parseInt(getCookie("rebirths"))
-  }
-  if (getCookie("clicks")){
-    clicks = parseInt(getCookie("clicks"))
-  }
-  if (getCookie("ppc")){
-    ppc = parseInt(getCookie("ppc"))
-    document.getElementById("ppc").innerHTML = ppc + " PPC";
-  }
-  if (getCookie("perS")){
-    perSec = parseInt(getCookie("perS"))
-    document.getElementById("per-sec").innerHTML = perSec + " PPS";
-  }
-  if (getCookie("clickU")){
-    clickUpgrades = parseInt(getCookie("clickU"))
-    document.getElementById("click-upgrade-times").innerHTML = clickUpgrades;
-  }
-  if (getCookie("clickUCost")){
-    clickUpgradeCost = parseInt(getCookie("clickUCost"))
-    document.getElementById("click-upgrade-cost").innerHTML = clickUpgradeCost;
-  }
-  if (getCookie("crowdU")){
-    crowdUpgrades = parseInt(getCookie("crowdU"))
-    document.getElementById("crowd-upgrade-times").innerHTML = crowdUpgrades;
-  }
-  if (getCookie("crowdUCost")){
-    crowdUpgradeCost = parseInt(getCookie("crowdUCost"))
-    document.getElementById("crowd-upgrade-cost").innerHTML = crowdUpgradeCost;
-  }
-  if (getCookie("maxwellU")){
-    maxwellUpgrades = parseInt(getCookie("maxwellU"))
-    document.getElementById("maxwell-upgrade-times").innerHTML = maxwellUpgrades;
-  }
-  if (getCookie("maxwellUCost")){
-    maxwellUpgradeCost = parseInt(getCookie("maxwellUCost"))
-    document.getElementById("maxwell-upgrade-cost").innerHTML = maxwellUpgradeCost;
-  }
+  alert("LOADING UNAVAILABLE IN DEMO.")
 }
 function save(){
-  document.cookie = "rebirths="+rebirths+"; "
-  document.cookie = "clicks="+clicks+";"
-  document.cookie = "ppc="+ppc+";"
-  document.cookie = "perS="+perSec+";"
-  document.cookie = "clickU="+clickUpgrades+";"
-  document.cookie = "clickUCost="+clickUpgradeCost+";"
-  document.cookie = "crowdU="+crowdUpgrades+";"
-  document.cookie = "crowdUCost="+crowdUpgradeCost+";"
-  document.cookie = "maxwellU="+maxwellUpgrades+";"
-  document.cookie = "maxwellUCost="+maxwellUpgradeCost+";"
+  alert("SAVING UNAVAILABLE IN DEMO.")
 }
 window.addEventListener("onbeforeunload", save());
 function getCookie(cname) {
@@ -240,4 +191,3 @@ window.addEventListener("keyup", (e) => {
     add();
   }
 });
-setTimeout(load, 100)
