@@ -1,5 +1,6 @@
-// Creator: Maximus Halloran
-// Music Taken Down for Copyright reasons.
+// DEMO VERSION OF PEOPLE CLICKER //
+//           BUY NOW              //
+// DEMO VERSION OF PEOPLE CLICKER //
 
 var click = document.getElementById("click");
 var clicktxt = document.getElementById("click-text");
