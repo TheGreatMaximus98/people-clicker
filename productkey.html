@@ -115,7 +115,7 @@
       fetch(url+formattedVal).then(res => res.json()).then(out => {
         if (out["result"] == 0){
           alert("Welcome "+out["licenseKey"]["customer"]["name"]+"!")
-          document.cookie = "productKey="+formattedVal+";"
+          document.cookie = "key="+formattedVal+";"
           document.location.href = "https://people-clicker.crazycontent.net/"
         } else {
           alert("Unknown Product Key")
