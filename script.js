@@ -91,7 +91,7 @@ function load(){
   fetch("https://app.cryptolens.io/api/key/GetKey?token=WyI2NTMyMTAzMyIsIjVLL0RySytIdFBKRjZBOERQSGsySHZSMEdUZmxXNFRYNU9PL25YUE4iXQ==&ProductId=22459&Key="+getCookie("key")).then(res => res.json()).then(out => {
       if (out["result"] == 1){
         document.body.innerHTML = ""
-        document.location.href = "/product-key.html"
+        document.location.href = "/productkey.html"
       }
     })
 }
