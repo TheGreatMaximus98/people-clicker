@@ -319,9 +319,9 @@ function hotelupgrade() {
   }
 }
 setInterval(function () {
-  clicks += perSec / 900;
+  clicks += perSec;
   clicktxt.innerHTML = format(Math.floor(clicks)) + " people";
-}, 100);
+}, 1000);
 function add() {
   if (clickAnimation == true) {
     document.getElementById("click-img").style.animation = "";
