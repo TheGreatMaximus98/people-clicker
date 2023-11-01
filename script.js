@@ -128,6 +128,18 @@ function getCookie(cname) {
   }
   return "";
 }
+var floor=Math.floor, abs=Math.abs, log=Math.log, round=Math.round, min=Math.min;
+var abbrev = ['K', 'M', 'B']; // abbreviations in steps of 1000x; extensible if need to edit
+function rnd(n, precision) {
+  var prec = 10**precision;
+  return round(n*prec)/prec;
+}
+function format(n) {
+  var base = floor(log(abs(n))/log(1000));
+  var suffix = abbrev[min(abbrev.length-1, base-1)];
+  base = abbrev.indexOf(suffix) + 1;
+  return suffix ? rnd(n/1000**base,2)+suffix : ''+n;
+}
 function clickupgrade() {
   if (clicks > clickUpgradeCost - 1) {
     clickUpgrades += 1;
@@ -308,7 +320,7 @@ function hotelupgrade() {
 }
 setInterval(function () {
   clicks += perSec / 900;
-  clicktxt.innerHTML = Math.floor(clicks) + " people";
+  clicktxt.innerHTML = format(Math.floor(clicks)) + " people";
 }, 100);
 function add() {
   if (clickAnimation == true) {
