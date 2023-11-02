@@ -34,11 +34,11 @@ function load(){
   }
   if (getCookie("ppc")){
     ppc = parseInt(getCookie("ppc"))
-    document.getElementById("ppc").innerHTML = ppc + " PPC";
+    document.getElementById("ppc").innerHTML = format(ppc) + " PPC";
   }
   if (getCookie("perS")){
     perSec = parseInt(getCookie("perS"))
-    document.getElementById("per-sec").innerHTML = perSec + " PPS";
+    document.getElementById("per-sec").innerHTML = format(perSec) + " PPS";
   }
   if (getCookie("clickU")){
     clickUpgrades = parseInt(getCookie("clickU"))
@@ -46,7 +46,7 @@ function load(){
   }
   if (getCookie("clickUCost")){
     clickUpgradeCost = parseInt(getCookie("clickUCost"))
-    document.getElementById("click-upgrade-cost").innerHTML = clickUpgradeCost;
+    document.getElementById("click-upgrade-cost").innerHTML = format(clickUpgradeCost);
   }
   if (getCookie("crowdU")){
     crowdUpgrades = parseInt(getCookie("crowdU"))
@@ -54,7 +54,7 @@ function load(){
   }
   if (getCookie("crowdUCost")){
     crowdUpgradeCost = parseInt(getCookie("crowdUCost"))
-    document.getElementById("crowd-upgrade-cost").innerHTML = crowdUpgradeCost;
+    document.getElementById("crowd-upgrade-cost").innerHTML = format(crowdUpgradeCost);
   }
   if (getCookie("maxwellU")){
     maxwellUpgrades = parseInt(getCookie("maxwellU"))
@@ -62,7 +62,7 @@ function load(){
   }
   if (getCookie("maxwellUCost")){
     maxwellUpgradeCost = parseInt(getCookie("maxwellUCost"))
-    document.getElementById("maxwell-upgrade-cost").innerHTML = maxwellUpgradeCost;
+    document.getElementById("maxwell-upgrade-cost").innerHTML = format(maxwellUpgradeCost);
   }
   if (getCookie("carU")){
     carUpgrades = parseInt(getCookie("carU"))
@@ -70,7 +70,7 @@ function load(){
   }
   if (getCookie("carUCost")){
     carUpgradeCost = parseInt(getCookie("carUCost"))
-    document.getElementById("car-upgrade-cost").innerHTML = carUpgradeCost;
+    document.getElementById("car-upgrade-cost").innerHTML = format(carUpgradeCost);
   }
   if (getCookie("busU")){
     busUpgrades = parseInt(getCookie("busU"))
@@ -78,7 +78,7 @@ function load(){
   }
   if (getCookie("busUCost")){
     busUpgradeCost = parseInt(getCookie("busUCost"))
-    document.getElementById("bus-upgrade-cost").innerHTML = busUpgradeCost;
+    document.getElementById("bus-upgrade-cost").innerHTML = format(busUpgradeCost);
   }
   if (getCookie("hotelU")){
     hotelUpgrades = parseInt(getCookie("hotelU"))
@@ -86,7 +86,7 @@ function load(){
   }
   if (getCookie("hotelUCost")){
     hotelUpgradeCost = parseInt(getCookie("hotelUCost"))
-    document.getElementById("hotel-upgrade-cost").innerHTML = hotelUpgradeCost;
+    document.getElementById("hotel-upgrade-cost").innerHTML = format(hotelUpgradeCost);
   }
   fetch("https://app.cryptolens.io/api/key/GetKey?token=WyI2NTMyMTAzMyIsIjVLL0RySytIdFBKRjZBOERQSGsySHZSMEdUZmxXNFRYNU9PL25YUE4iXQ==&ProductId=22459&Key="+getCookie("key")).then(res => res.json()).then(out => {
       if (out["result"] == 1){
@@ -154,9 +154,9 @@ function clickupgrade() {
       buysfx.play();
     });
     clicks = clicks - clickUpgradeCost;
-    clickUpgradeCost = Math.floor(clickUpgradeCost * 1.5);
-    document.getElementById("click-upgrade-cost").innerHTML = clickUpgradeCost;
-    clicktxt.innerHTML = Math.floor(clicks) + " people";
+    clickUpgradeCost = format(Math.floor()clickUpgradeCost * 1.5);
+    document.getElementById("click-upgrade-cost").innerHTML = format(clickUpgradeCost);
+    clicktxt.innerHTML = format(Math.floor()clicks) + " people";
     ppc = ppc + 1;
     document.getElementById("ppc").innerHTML = ppc + " PPC";
   } else {
@@ -184,16 +184,16 @@ function crowdupgrade() {
       buysfx.play();
     });
     clicks = clicks - crowdUpgradeCost;
-    crowdUpgradeCost = Math.floor(crowdUpgradeCost * 1.5)
-    document.getElementById("crowd-upgrade-cost").innerHTML = crowdUpgradeCost
-    clicktxt.innerHTML = Math.floor(clicks) + " people"
+    crowdUpgradeCost = Math.floor(crowdUpgradeCost) * 1.5
+    document.getElementById("crowd-upgrade-cost").innerHTML = format(crowdUpgradeCost)
+    clicktxt.innerHTML = format(Math.floor(clicks)) + " people"
     perSec = perSec + 10
-    document.getElementById("per-sec").innerHTML = Math.floor(perSec) + " PPS"
+    document.getElementById("per-sec").innerHTML = format(Math.floor(perSec)) + " PPS"
   } else {
     const toastBootstrap = bootstrap.Toast.getOrCreateInstance(
       document.getElementById("cantAfford")
     );
-    if (clickUpgradeCost - clicks == 1) {
+    if (crowdUpgradeCost - clicks == 1) {
       document.getElementById("alert-end").innerHTML = "more person.";
     } else {
       document.getElementById("alert-end").innerHTML = "more people.";
@@ -216,9 +216,9 @@ function maxwellupgrade() {
       buysfx.play();
     });
     clicks = clicks - maxwellUpgradeCost;
-    maxwellUpgradeCost = Math.floor(maxwellUpgradeCost * 1.5);
-    document.getElementById("maxwell-upgrade-cost").innerHTML = maxwellUpgradeCost;
-    clicktxt.innerHTML = Math.floor(clicks) + " people";
+    maxwellUpgradeCost = format(Math.floor(maxwellUpgradeCost) * 1.5);
+    document.getElementById("maxwell-upgrade-cost").innerHTML = format(maxwellUpgradeCost);
+    clicktxt.innerHTML = format(Math.floor(clicks)) + " people";
     if (ppc == 1){
       ppc = 10;
     } else {
@@ -233,12 +233,12 @@ function maxwellupgrade() {
       )
       maxwell.show();
     }
-    document.getElementById("ppc").innerHTML = Math.floor(ppc) + " PPC";
+    document.getElementById("ppc").innerHTML = format(Math.floor(ppc)) + " PPC";
   } else {
     const toastBootstrap = bootstrap.Toast.getOrCreateInstance(
       document.getElementById("cantAfford")
     );
-    if (clickUpgradeCost - clicks == 1) {
+    if (crowdUpgradeCost - clicks == 1) {
       document.getElementById("alert-end").innerHTML = "more person.";
     } else {
       document.getElementById("alert-end").innerHTML = "more people.";
@@ -259,11 +259,11 @@ function carupgrade() {
       buysfx.play();
     });
     clicks = clicks - carUpgradeCost;
-    carUpgradeCost = Math.floor(carUpgradeCost * 1.5)
-    document.getElementById("car-upgrade-cost").innerHTML = carUpgradeCost
-    clicktxt.innerHTML = Math.floor(clicks) + " people"
+    carUpgradeCost = format(Math.floor()carUpgradeCost * 1.5)
+    document.getElementById("car-upgrade-cost").innerHTML = format(carUpgradeCost)
+    clicktxt.innerHTML = format(format(Math.floor()clicks)) + " people"
     perSec = perSec + 100
-    document.getElementById("per-sec").innerHTML = Math.floor(perSec) + " PPS"
+    document.getElementById("per-sec").innerHTML = format(Math.floor(perSec)) + " PPS"
   } else {
     const toastBootstrap = bootstrap.Toast.getOrCreateInstance(
       document.getElementById("cantAfford")
@@ -273,7 +273,7 @@ function carupgrade() {
     } else {
       document.getElementById("alert-end").innerHTML = "more people.";
     }
-    document.getElementById("alert-cost").innerHTML = carUpgradeCost - clicks;
+    document.getElementById("alert-cost").innerHTML = format(carUpgradeCost) - clicks;
     toastBootstrap.show();
   }
 }
@@ -282,13 +282,15 @@ function busupgrade() {
     if (busUpgrades == 4){
       document.getElementById('bus-upgrade').disabled = true
     }
+    busUpgrades += 1
     ppc += 500;
     var buysfx = new Audio("//cdn.crazycontent.net/buy.mp3");
     buysfx.addEventListener("canplaythrough", (event) => {
       buysfx.play();
     });
     clicks = clicks - busUpgradeCost;
-    clicktxt.innerHTML = Math.floor(clicks) + " people"
+    clicktxt.innerHTML = format(format(Math.floor()clicks)) + " people"
+    document.getElementById("ppc").innerHTML = format(Math.floor(ppc) + " PPC";
   } else {
     const toastBootstrap = bootstrap.Toast.getOrCreateInstance(
       document.getElementById("cantAfford")
@@ -307,13 +309,14 @@ function hotelupgrade() {
     if (hotelUpgrades == 4){
       document.getElementById('bus-upgrade').disabled = true
     }
+    hotelUpgrades += 1
     perSec += 1000;
     var buysfx = new Audio("//cdn.crazycontent.net/buy.mp3");
     buysfx.addEventListener("canplaythrough", (event) => {
       buysfx.play();
     });
     clicks = clicks - hotelUpgradeCost;
-    clicktxt.innerHTML = Math.floor(clicks) + " people"
+    clicktxt.innerHTML = format(clicks) + " people"
   } else {
     const toastBootstrap = bootstrap.Toast.getOrCreateInstance(
       document.getElementById("cantAfford")
@@ -336,7 +339,7 @@ function add() {
     document.getElementById("click-img").style.animation = "";
   }
   clicks += ppc * (rebirths+1);
-  clicktxt.innerHTML = Math.floor(clicks) + " people";
+  clicktxt.innerHTML = format(Math.floor(clicks)) + " people";
   clickAnimation = true;
   document.getElementById("click-img").style.animation = "click 0.2s";
   setTimeout(function () {
