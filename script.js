@@ -142,6 +142,9 @@ function format(n) {
 }
 function clickupgrade() {
   if (clicks > clickUpgradeCost - 1) {
+    if (clickUpgrades == 4){
+      document.getElementById('click-upgrade').disabled = true
+    }
     clickUpgrades += 1;
     document.getElementById("click-upgrade-times").innerHTML = clickUpgrades;
     var buysfx = new Audio(
@@ -276,6 +279,9 @@ function carupgrade() {
 }
 function busupgrade() {
   if (clicks > busUpgradeCost - 1) {
+    if (busUpgrades == 4){
+      document.getElementById('bus-upgrade').disabled = true
+    }
     ppc += 500;
     var buysfx = new Audio("//cdn.crazycontent.net/buy.mp3");
     buysfx.addEventListener("canplaythrough", (event) => {
@@ -297,8 +303,11 @@ function busupgrade() {
   }
 }
 function hotelupgrade() {
-  ppc += 1000;
-  if (clicks > busUpgradeCost - 1) {
+  if (clicks > hotelUpgradeCost - 1) {
+    if (hotelUpgrades == 4){
+      document.getElementById('bus-upgrade').disabled = true
+    }
+    perSec += 1000;
     var buysfx = new Audio("//cdn.crazycontent.net/buy.mp3");
     buysfx.addEventListener("canplaythrough", (event) => {
       buysfx.play();
@@ -309,7 +318,7 @@ function hotelupgrade() {
     const toastBootstrap = bootstrap.Toast.getOrCreateInstance(
       document.getElementById("cantAfford")
     );
-    if (busUpgradeCost - clicks == 1) {
+    if (hotelUpgradeCost - clicks == 1) {
       document.getElementById("alert-end").innerHTML = "more person.";
     } else {
       document.getElementById("alert-end").innerHTML = "more people.";
