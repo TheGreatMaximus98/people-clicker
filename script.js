@@ -259,9 +259,9 @@ function carupgrade() {
       buysfx.play();
     });
     clicks = clicks - carUpgradeCost;
-    carUpgradeCost = format(Math.floor()carUpgradeCost * 1.5)
+    carUpgradeCost = Math.floor(carUpgradeCost) * 1.5
     document.getElementById("car-upgrade-cost").innerHTML = format(carUpgradeCost)
-    clicktxt.innerHTML = format(format(Math.floor()clicks)) + " people"
+    clicktxt.innerHTML = format(Math.floor(clicks)) + " people"
     perSec = perSec + 100
     document.getElementById("per-sec").innerHTML = format(Math.floor(perSec)) + " PPS"
   } else {
