@@ -154,9 +154,9 @@ function clickupgrade() {
       buysfx.play();
     });
     clicks = clicks - clickUpgradeCost;
-    clickUpgradeCost = format(Math.floor()clickUpgradeCost * 1.5);
+    clickUpgradeCost = Math.floor(clickUpgradeCost) * 1.5;
     document.getElementById("click-upgrade-cost").innerHTML = format(clickUpgradeCost);
-    clicktxt.innerHTML = format(Math.floor()clicks) + " people";
+    clicktxt.innerHTML = format(Math.floor(clicks)) + " people";
     ppc = ppc + 1;
     document.getElementById("ppc").innerHTML = ppc + " PPC";
   } else {
