@@ -290,7 +290,7 @@ function busupgrade() {
     });
     clicks = clicks - busUpgradeCost;
     clicktxt.innerHTML = format(Math.floor(clicks)) + " people"
-    document.getElementById("ppc").innerHTML = format(Math.floor(ppc) + " PPC";
+    document.getElementById("ppc").innerHTML = format(Math.floor(ppc)) + " PPC";
   } else {
     const toastBootstrap = bootstrap.Toast.getOrCreateInstance(
       document.getElementById("cantAfford")
