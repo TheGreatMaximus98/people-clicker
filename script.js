@@ -148,7 +148,7 @@ function clickupgrade() {
     clickUpgrades += 1;
     document.getElementById("click-upgrade-times").innerHTML = clickUpgrades;
     var buysfx = new Audio(
-      "/buy.mp3"
+      "http://cdn.crazycontent.net/buy.mp3"
     );
     buysfx.addEventListener("canplaythrough", (event) => {
       buysfx.play();
@@ -210,7 +210,7 @@ function maxwellupgrade() {
     maxwellUpgrades += 1;
     document.getElementById("maxwell-upgrade-times").innerHTML = maxwellUpgrades;
     var buysfx = new Audio(
-      "/buy.mp3"
+      "http://cdn.crazycontent.net/buy.mp3"
     );
     buysfx.addEventListener("canplaythrough", (event) => {
       buysfx.play();
@@ -254,7 +254,7 @@ function carupgrade() {
     }
     carUpgrades += 1;
     document.getElementById("car-upgrade-times").innerHTML = carUpgrades;
-    var buysfx = new Audio("/buy.mp3");
+    var buysfx = new Audio("http://cdn.crazycontent.net/buy.mp3");
     buysfx.addEventListener("canplaythrough", (event) => {
       buysfx.play();
     });
@@ -284,7 +284,7 @@ function busupgrade() {
     }
     busUpgrades += 1
     ppc += 500;
-    var buysfx = new Audio("//cdn.crazycontent.net/buy.mp3");
+    var buysfx = new Audio("//cdn.crazycontent.nethttp://cdn.crazycontent.net/buy.mp3");
     buysfx.addEventListener("canplaythrough", (event) => {
       buysfx.play();
     });
@@ -311,7 +311,7 @@ function hotelupgrade() {
     }
     hotelUpgrades += 1
     perSec += 1000;
-    var buysfx = new Audio("//cdn.crazycontent.net/buy.mp3");
+    var buysfx = new Audio("//cdn.crazycontent.nethttp://cdn.crazycontent.net/buy.mp3");
     buysfx.addEventListener("canplaythrough", (event) => {
       buysfx.play();
     });
