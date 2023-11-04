@@ -216,7 +216,7 @@ function maxwellupgrade() {
       buysfx.play();
     });
     clicks = clicks - maxwellUpgradeCost;
-    maxwellUpgradeCost = format(Math.floor(maxwellUpgradeCost) * 1.5);
+    maxwellUpgradeCost = Math.floor(maxwellUpgradeCost) * 1.5;
     document.getElementById("maxwell-upgrade-cost").innerHTML = format(maxwellUpgradeCost);
     clicktxt.innerHTML = format(Math.floor(clicks)) + " people";
     if (ppc == 1){
