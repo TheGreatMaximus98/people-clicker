@@ -1,6 +1,3 @@
-// Creator: Maximus Halloran
-// Music Taken Down for Copyright reasons.
-
 var click = document.getElementById("click");
 var clicktxt = document.getElementById("click-text");
 var clicks = 0;
