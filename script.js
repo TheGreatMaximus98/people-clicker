@@ -1,3 +1,4 @@
+var Storage = window.localStorage;
 var click = document.getElementById("click");
 var clicktxt = document.getElementById("click-text");
 var clicks = 0;
