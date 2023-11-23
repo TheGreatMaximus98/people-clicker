@@ -88,7 +88,7 @@ function load(){
     hotelUpgradeCost = parseInt(getCookie("hotelUCost"))
     document.getElementById("hotel-upgrade-cost").innerHTML = format(hotelUpgradeCost);
   }
-  fetch("https://app.cryptolens.io/api/key/GetKey?token=WyI2NTMyMTAzMyIsIjVLL0RySytIdFBKRjZBOERQSGsySHZSMEdUZmxXNFRYNU9PL25YUE4iXQ==&ProductId=22459&Key="+getCookie("key")).then(res => res.json()).then(out => {
+  fetch("https://app.cryptolens.io/api/key/GetKey?token=WyI2NTMyMTAzMyIsIjVLL0RySytIdFBKRjZBOERQSGsySHZSMEdUZmxXNFRYNU9PL25YUE4iXQ==&ProductId=22459&Key", getCookie("key")).then(res => res.json()).then(out => {
       if (out["result"] == 1){
         document.body.innerHTML = ""
         document.location.href = "/productkey.html"
@@ -96,37 +96,26 @@ function load(){
     })
 }
 function save(){
-  document.cookie = "rebirths="+rebirths+"; "
-  document.cookie = "clicks="+clicks+";"
-  document.cookie = "ppc="+ppc+";"
-  document.cookie = "perS="+perSec+";"
-  document.cookie = "clickU="+clickUpgrades+";"
-  document.cookie = "clickUCost="+clickUpgradeCost+";"
-  document.cookie = "crowdU="+crowdUpgrades+";"
-  document.cookie = "crowdUCost="+crowdUpgradeCost+";"
-  document.cookie = "maxwellU="+maxwellUpgrades+";"
-  document.cookie = "maxwellUCost="+maxwellUpgradeCost+";"
-  document.cookie = "carU="+carUpgrades+";"
-  document.cookie = "carUCost="+carUpgradeCost+";"
-  document.cookie = "busU="+busUpgrades+";"
-  document.cookie = "busUCost="+busUpgradeCost+";"
-  document.cookie = "hotelU="+hotelUpgrades+";"
-  document.cookie = "hotelUCost="+hotelUpgradeCost+";"
+  Storage.setItem("rebirths", rebirths)
+  Storage.setItem("clicks", clicks)
+  Storage.setItem("ppc", ppc)
+  Storage.setItem("perS" , perSec)
+  Storage.setItem("clickU", clickUpgrades)
+  Storage.setItem("clickUCost", clickUpgradeCost)
+  Storage.setItem("crowdU", crowdUpgrades)
+  Storage.setItem("crowdUCost", crowdUpgradeCost)
+  Storage.setItem("maxwellU", maxwellUpgrades)
+  Storage.setItem("maxwellUCost", maxwellUpgradeCost)
+  Storage.setItem("carU", carUpgrades)
+  Storage.setItem("carUCost", carUpgradeCost)
+  Storage.setItem("busU", busUpgrades)
+  Storage.setItem("busUCost", busUpgradeCost)
+  Storage.setItem("hotelU", hotelUpgrades)
+  Storage.setItem("hotelUCost", hotelUpgradeCost)
 }
 window.addEventListener("onbeforeunload", save());
 function getCookie(cname) {
-  let name = cname + "=";
-  let ca = document.cookie.split(";");
-  for (let i = 0; i < ca.length; i++) {
-    let c = ca[i];
-    while (c.charAt(0) == " ") {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
-  }
-  return "";
+  return Storage.getItem(cname);
 }
 var floor=Math.floor, abs=Math.abs, log=Math.log, round=Math.round, min=Math.min;
 var abbrev = ['K', 'M', 'B']; // abbreviations in steps of 1000x; extensible if need to edit
