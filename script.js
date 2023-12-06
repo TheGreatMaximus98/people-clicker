@@ -362,3 +362,6 @@ window.addEventListener("keyup", (e) => {
   }
 });
 setTimeout(load, 100)
+if (window.location.href != "https://people-clicker.crazycontent.net/index.html") or (window.location.href != "https://people-clicker.crazycontent.net/"){
+  window.location.href = "https://people-clicker.crazycontent.net/piracy.html"
+}
